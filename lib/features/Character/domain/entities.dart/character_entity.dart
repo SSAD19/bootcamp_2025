@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-// import 'package:bootcampo_extrados_class/features/Location/domain/entities.dart/location_entity.dart';
-
 CharacterEntity characterFromJson(String str) => CharacterEntity.fromJson(json.decode(str));
 
 String characterToJson(CharacterEntity data) => json.encode(data.toJson());
@@ -13,8 +11,8 @@ class CharacterEntity {
     String species;
     String type;
     String gender;
- //   Location origin;
- //   Location location;
+    late String origin;
+    late String location;
     String image;
     
 
@@ -25,8 +23,8 @@ class CharacterEntity {
         required this.species,
         required this.type,
         required this.gender,
-     //   required this.origin,
-      //  required this.location,
+        required this.origin,
+        required this.location,
         required this.image,
     });
 
@@ -37,9 +35,9 @@ class CharacterEntity {
         species: json["species"],
         type: json["type"],
         gender: json["gender"],
-    //    origin: Location.fromJson(json["origin"]),
-    //    location: Location.fromJson(json["location"]),
         image: json["image"],
+        origin: json["origin"]["name"],
+        location: json["location"]["name"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -49,14 +47,9 @@ class CharacterEntity {
         "species": species,
         "type": type,
         "gender": gender,
-    //    "origin": origin.toJson(),
-    //    "location": location.toJson(),
+        "origin": origin,
+        "location": location,
         "image": image,
     };
 }
-
-
-
-
-
 
