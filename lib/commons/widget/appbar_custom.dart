@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 
-class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  @override
-  const CustomAppbar({super.key});
+class CustomAppbar extends AppBar {
+  CustomAppbar({super.key});
 
-  @override
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text('Rick and Morty'),
@@ -22,8 +20,4 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-  
-  @override
-  Size get preferredSize => throw UnimplementedError();
-
 }
