@@ -26,7 +26,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
         return Left(NotFoundFailure('Sorry, an unexpected error occurred.'));
       }
       final List<CharacterEntity> characters = 
-        (result.body as List).map((json) => CharacterEntity
+        (result.body["results"] as List).map((json) => CharacterEntity
         .fromJson(json)).toList();
 
         debugPrint(characters[0].name + " " + characters[1].name);
