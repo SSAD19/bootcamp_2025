@@ -11,9 +11,11 @@ class GetAllCharacterUseCase {
   GetAllCharacterUseCase(this.repository);
 
   Future<Either<Failure, List<CharacterEntity>>> call() async {
-    return await repository.getAllCharacters();
+
+    final result =  await repository.getAllCharacters();
+    return result.fold(
+      (l) => Left(l),
+      (r) => Right(r));
+    }
   }
 
-
-
-}

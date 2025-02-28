@@ -1,9 +1,17 @@
-// A CREAR EN PROXIMAS CLASES
+part of 'character_bloc.dart';
 
-/*part of 'character_bloc.dart';
-
-@immutable
-sealed class CharacterState {}
+abstract class CharacterState {}
 
 final class CharacterInitial extends CharacterState {}
-*/
+
+final class CharacterLoading extends CharacterState {}
+
+final class CharacterLoaded extends CharacterState {
+  final List<CharacterEntity> characters;
+  CharacterLoaded(this.characters);
+}
+
+final class CharacterError extends CharacterState {
+  final String message;
+  CharacterError(this.message);
+}

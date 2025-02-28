@@ -1,9 +1,16 @@
-// A CREAR EN PROXIMAS CLASES
+
+part of 'character_bloc.dart';
 
 
+abstract class CharacterEvent {}
 
-/*part of 'character_bloc.dart';
+class CharacterInitialEvent extends CharacterEvent {}
 
-@immutable
-sealed class CharacterEvent {}
-*/
+class CharacterGetAllEvent extends CharacterEvent {
+  CharacterGetAllEvent();
+}
+
+class CharacterGetByIdEvent extends CharacterEvent {
+  final int id;
+  CharacterGetByIdEvent(this.id);
+}

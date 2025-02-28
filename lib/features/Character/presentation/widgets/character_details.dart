@@ -2,11 +2,11 @@ import 'package:bootcampo_extrados_class/features/Character/domain/entities.dart
 import 'package:flutter/material.dart';
 
 class CharacterDetails extends StatelessWidget {
-  final CharacterEntity? character;
+  final CharacterEntity character;
 
   const CharacterDetails({
     super.key,
-    this.character,
+    required this.character,
   });
 
   @override
@@ -15,9 +15,9 @@ class CharacterDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Name: Rick Sanchez'), // ${character.name}	
-        Text('Specie: Human'), // ${character.species}
-        Text('Status: Alive'), // ${character.status}
+        Text('Name: ${character.name}'), // ${character.name}	
+        Text('Specie: ${character.species}'), // ${character.species}
+        Text('Status: ${character.status}'), // ${character.status}
                 
       ],
     );

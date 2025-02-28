@@ -2,16 +2,16 @@ import 'package:bootcampo_extrados_class/features/Character/domain/entities.dart
 import 'package:flutter/material.dart';
 
 class CharacterImage extends StatelessWidget {
-  final CharacterEntity? character;
+  final CharacterEntity character;
   const CharacterImage({
     super.key,
-    this.character,
+    required this.character,
   });
 
   @override
   Widget build(BuildContext context) {
     return Image.network(
-      'https://rickandmortyapi.com/api/character/avatar/1.jpeg', //character.image
+      character.image, //character.image
       height: 100, 
       width: 100,
         fit: BoxFit.fill,

@@ -1,6 +1,5 @@
 import 'package:bootcampo_extrados_class/config/getit_config.dart';
-import 'package:bootcampo_extrados_class/features/Character/data/repositories/character_repository_impl.dart';
-import 'package:bootcampo_extrados_class/features/Character/presentation/Pages/Home.dart';
+import 'package:bootcampo_extrados_class/features/Character/presentation/Pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 

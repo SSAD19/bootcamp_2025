@@ -1,10 +1,12 @@
 
+import 'package:bootcampo_extrados_class/features/Character/domain/entities.dart/character_entity.dart';
 import 'package:bootcampo_extrados_class/features/Character/presentation/widgets/character_details.dart';
 import 'package:bootcampo_extrados_class/features/Character/presentation/widgets/character_image.dart';
 import 'package:flutter/material.dart';
 
 class CardCharacter extends StatelessWidget {
-  const CardCharacter({super.key});
+  final CharacterEntity character;
+  const CardCharacter({super.key, required this.character});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,9 @@ class CardCharacter extends StatelessWidget {
             spacing: 10.0,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CharacterImage(),
+              CharacterImage(character: character,),
               SizedBox(width: 15),
-              CharacterDetails(),            
+              CharacterDetails(character: character,),            
             ],
           ),
         ),
