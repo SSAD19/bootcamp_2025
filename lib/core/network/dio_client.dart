@@ -1,5 +1,4 @@
-
-  import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 
 final dioClient = Dio(
   BaseOptions(
@@ -9,4 +8,5 @@ final dioClient = Dio(
       'Accept': 'application/json',
     },
   ),
-);
+); 
+

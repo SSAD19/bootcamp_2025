@@ -1,4 +1,5 @@
 import 'package:bootcampo_extrados_class/config/getit_config.dart';
+import 'package:bootcampo_extrados_class/features/Character/data/repositories/character_repository_impl.dart';
 import 'package:bootcampo_extrados_class/features/Character/presentation/Pages/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -10,7 +11,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             future: GetIt.instance.allReady(), 
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return const Scaffold(body: MyHomePage());
+                return Scaffold(body: MyHomePage());
               } else {
                 return const Scaffold(
                     body: Center(child: CircularProgressIndicator()));

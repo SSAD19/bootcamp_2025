@@ -6,6 +6,7 @@ import 'package:bootcampo_extrados_class/features/Character/domain/repositories/
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 
 
 class CharacterRepositoryImpl implements CharacterRepository {
@@ -27,6 +28,8 @@ class CharacterRepositoryImpl implements CharacterRepository {
       final List<CharacterEntity> characters = 
         (result.body as List).map((json) => CharacterEntity
         .fromJson(json)).toList();
+
+        debugPrint(characters[0].name + " " + characters[1].name);
 
       return Right(characters);
     } on DioException catch (e) {
