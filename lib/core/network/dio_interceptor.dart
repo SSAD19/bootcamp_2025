@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 //Ejemplo de interceptores usando Dio
 //Interceptores: onRequest, onResponse, onError
@@ -9,20 +10,21 @@ class MyInterceptor extends InterceptorsWrapper {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     // Agregar un encabezado de autenticación a todas las solicitudes
     options.headers['Authorization'] = 'Bearer YOUR_ACCESS_TOKEN';
-    print('Solicitud: ${options.method} ${options.path}');
+    debugPrint('Solicitud: ${options.method} ${options.path}'); 
     return super.onRequest(options, handler);
+    
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    print('Respuesta: ${response.statusCode} ${response.data}');
+    debugPrint('Respuesta: ${response.statusCode} ${response.data}');
     return super.onResponse(response, handler);
   }
 
   @override
-  void onError(DioException error, ErrorInterceptorHandler handler) {
-    print('Error: ${error.message}');
-    return super.onError(error, handler);
+  void onError(DioException err, ErrorInterceptorHandler handler) {
+    debugPrint('Error: ${err.message}');
+    return super.onError(err, handler);
   }
 }
 /*

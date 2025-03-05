@@ -29,8 +29,7 @@ class CharacterRepositoryImpl implements CharacterRepository {
         (result.body["results"] as List).map((json) => CharacterEntity
         .fromJson(json)).toList();
 
-        debugPrint(characters[0].name + " " + characters[1].name);
-
+        debugPrint('peronaje 1:${characters[0].name},  peronaje 2:${characters[1].name}');
       return Right(characters);
     } on DioException catch (e) {
       return Left(NotFoundFailure(e.message!));

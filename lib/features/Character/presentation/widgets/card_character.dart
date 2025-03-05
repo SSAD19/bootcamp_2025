@@ -23,7 +23,7 @@ class CardCharacter extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CharacterImage(character: character,),
-              SizedBox(width: 15),
+              SizedBox(width: 10),
               CharacterDetails(character: character,),            
             ],
           ),

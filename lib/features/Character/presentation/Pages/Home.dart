@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(),
+      appBar: CustomAppBar(),
       body: BlocProvider(
         create: (context) => CharacterBloc(getAllCharacterUseCase: GetIt.instance.get()),
         child: ListCharacter(),

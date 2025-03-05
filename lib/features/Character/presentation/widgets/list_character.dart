@@ -11,12 +11,11 @@ class ListCharacter extends StatefulWidget {
 }
 
 class _ListCharacterState extends State<ListCharacter> {
-  late final CharacterBloc _blocCharacter;
+  late CharacterBloc _blocCharacter;
 
   @override
   void initState() {
-    _blocCharacter = BlocProvider.of<CharacterBloc>(context)
-      ..add(CharacterGetAllEvent());
+    _blocCharacter = context.read<CharacterBloc>()..add(CharacterGetAllEvent());
     super.initState();
   }
 

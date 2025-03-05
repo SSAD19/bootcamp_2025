@@ -15,11 +15,22 @@ class CharacterDetails extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Name: ${character.name}'), // ${character.name}	
-        Text('Specie: ${character.species}'), // ${character.species}
-        Text('Status: ${character.status}'), // ${character.status}
+        DetailText( text: 'Name: ${character.name}'), 	
+        DetailText(text:'Specie: ${character.species}'), 
+        DetailText(text:'Status: ${character.status}'), 
                 
       ],
     );
+  }
+}
+
+class DetailText extends StatelessWidget {
+  final String text; 
+  const DetailText({required this.text, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text,
+      overflow: TextOverflow.ellipsis); 
   }
 }
