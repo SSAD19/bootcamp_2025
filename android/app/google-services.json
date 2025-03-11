@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "416075577285",
+    "project_id": "bootcamp-extra2-25",
+    "storage_bucket": "bootcamp-extra2-25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416075577285:android:a39a6528bdc32c7e907dac",
+        "android_client_info": {
+          "package_name": "com.example.bootcampo_extrados_class"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416075577285-87r3a26r65sn0stsr9d55pg36dkpns7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bootcampo_extrados_class",
+            "certificate_hash": "a6ddc203eb4f357bac9caee1304d263639467ef2"
+          }
+        },
+        {
+          "client_id": "416075577285-p4n436306ugrhcnc4b6nthd91b7nrfpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs1cxUwbPI69lBHL2EjnR2fesGorZOyZk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416075577285-p4n436306ugrhcnc4b6nthd91b7nrfpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,23 +11,10 @@ class ListCharacter extends StatefulWidget {
 }
 
 class _ListCharacterState extends State<ListCharacter> {
-  late CharacterBloc _blocCharacter;
-
-  @override
-  void initState() {
-    _blocCharacter = context.read<CharacterBloc>()..add(CharacterGetAllEvent());
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _blocCharacter.close();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
+      bloc: context.read<CharacterBloc>()..add(CharacterGetAllEvent()),
       builder: (context, state) {
         if (state is CharacterLoading || state is CharacterInitial) {
           return const Center(
@@ -40,19 +27,22 @@ class _ListCharacterState extends State<ListCharacter> {
           );
         }
         if (state is CharacterLoaded) {
-  
-          return ListView.builder(
-            itemCount: state.characters.length,
-            itemBuilder: (context, index) {
-              return CardCharacter(character: state.characters[index]);
-            },
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: state.characters.length,
+                  itemBuilder: (context, index) {
+                    return CardCharacter(character: state.characters[index]);
+                  },
+                ),
+              ),
+            ],
           );
         }
         return const Center(
           child: Text('Error with BlocBuilder'),
         );
-
-
       },
     );
   }

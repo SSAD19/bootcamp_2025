@@ -5,10 +5,11 @@ import 'package:flutter/foundation.dart';
 //Interceptores: onRequest, onResponse, onError
 
 
-class MyInterceptor extends InterceptorsWrapper {
+class DioInterceptor extends InterceptorsWrapper {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     // Agregar un encabezado de autenticación a todas las solicitudes
+    //
     options.headers['Authorization'] = 'Bearer YOUR_ACCESS_TOKEN';
     debugPrint('Solicitud: ${options.method} ${options.path}'); 
     return super.onRequest(options, handler);
@@ -27,13 +28,3 @@ class MyInterceptor extends InterceptorsWrapper {
     return super.onError(err, handler);
   }
 }
-/*
-void main() {
-  final dio = Dio();
-  dio.interceptors.add(MyInterceptor());
-
-  // Realizar una solicitud de ejemplo
-  dio.get('https://jsonplaceholder.typicode.com/posts/1')
-    .then((response) => print('Data: ${response.data}'))
-    .catchError((error) => print('Error: $error'));
-}*/
