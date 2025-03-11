@@ -46,8 +46,8 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
       SignInEventLogOut event, Emitter<SignInState> emit) {
     try {
       localstorageSignInUseCase.logOut();
-      emit(SignInInitial());
       sesionInit = false;
+      emit(SignInInitial());
     } catch (e) {
       emit(SignInError(message: e.toString()));
     }
