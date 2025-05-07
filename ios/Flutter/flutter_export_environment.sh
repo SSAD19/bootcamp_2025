@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=C:\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\Users\stefa\OneDrive\Documents\Code\Extrados\bootcamp_code"
+export "FLUTTER_APPLICATION_PATH=C:\Users\stefa\OneDrive\Documents\Code\Extrados\bootcamp_code\bootcampo_extrados_class"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
