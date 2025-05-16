@@ -1,4 +1,3 @@
-
 import 'package:bootcampo_extrados_class/commons/widget/appbar_custom.dart';
 import 'package:bootcampo_extrados_class/features/Character/presentation/bloc/character_bloc.dart';
 import 'package:bootcampo_extrados_class/features/Character/presentation/widgets/list_character.dart';
@@ -15,7 +14,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(),
       body: BlocProvider(
-        create: (context) => CharacterBloc(getAllCharacterUseCase: GetIt.instance.get()),
+        create: (context) => CharacterBloc(
+            getAllCharacterUseCase: GetIt.instance.get(),
+            getOneCharacterUseCase: GetIt.instance.get()),
         child: ListCharacter(),
       ),
     );
@@ -23,3 +24,5 @@ class MyHomePage extends StatelessWidget {
 }
 
 
+
+// BlocBuilder , BlocListener y BlocConsumer

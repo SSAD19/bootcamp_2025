@@ -40,20 +40,56 @@ class _ListCharacterState extends State<ListCharacter> {
           );
         }
         if (state is CharacterLoaded) {
-  
-          return ListView.builder(
-            itemCount: state.characters.length,
-            itemBuilder: (context, index) {
-              return CardCharacter(character: state.characters[index]);
-            },
+          return Column(
+            children: [
+              ListView.builder(
+                itemCount: state.characters.length,
+                itemBuilder: (context, index) {
+                  return CardCharacter(character: state.characters[index]);
+                },
+              ),
+              FloatingActionButton(
+                onPressed: () {
+                  _blocCharacter.add(CharacterGetByIdEvent(4, 'Rick'));
+                },
+                child: Text('Ver un personaje'),
+              )
+            ],
           );
         }
+
+        if (state is OneCharacter) {
+          return Container(
+            child: Column(
+              children: [
+                Text('nombre:  ${state.personaje.name}'),
+                Text('Especie:  ${state.personaje.species}'),
+                FloatingActionButton(
+                  onPressed: () {
+                    _blocCharacter.add(CharacterGetAllEvent());
+                  },
+                  child: Text('Volver a tdoos los personajes'),
+                )
+              ],
+            ),
+          );
+        }
+
         return const Center(
           child: Text('Error with BlocBuilder'),
         );
-
-
       },
     );
   }
 }
+
+
+/*
+
+en am
+
+
+
+
+
+*/

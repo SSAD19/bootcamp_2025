@@ -1,6 +1,4 @@
-
 part of 'character_bloc.dart';
-
 
 abstract class CharacterEvent {}
 
@@ -12,5 +10,6 @@ class CharacterGetAllEvent extends CharacterEvent {
 
 class CharacterGetByIdEvent extends CharacterEvent {
   final int id;
-  CharacterGetByIdEvent(this.id);
+  final String name;
+  CharacterGetByIdEvent(this.id, this.name);
 }

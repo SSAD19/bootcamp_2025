@@ -15,3 +15,9 @@ final class CharacterError extends CharacterState {
   final String message;
   CharacterError(this.message);
 }
+
+final class OneCharacter extends CharacterState {
+  final CharacterEntity personaje;
+
+  OneCharacter({required this.personaje});
+}
